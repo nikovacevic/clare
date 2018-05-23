@@ -189,11 +189,6 @@ nav#full-screen-nav ul li a:hover {
 
 section#atf {
   height: 100vh;
-  /* height: 400px; */
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-end;
-  align-items: center;
   background-color: #5b5b5b;
   background-image: url('/img/home/hero.jpg');
   background-repeat: no-repeat;
@@ -201,6 +196,9 @@ section#atf {
   background-size: cover;
   background-origin: border-box;
   background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   box-shadow: 0 0 4px #696868;
 }
 section#atf .atf-content {
