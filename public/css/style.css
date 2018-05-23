@@ -90,6 +90,9 @@ li img {
 .right {
   float: right;
 }
+.no-scroll {
+  overflow: hidden;
+}
 
 header {
   display: flex;
@@ -160,6 +163,7 @@ nav#full-screen-nav {
   left: 0;
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
   transform: translateY(-100%);
   transition: transform 0.4s;
   background: #202028;
@@ -187,28 +191,6 @@ nav#full-screen-nav ul li a:hover {
   text-decoration: none;
 }
 
-section#atf {
-  height: 100vh;
-  background-color: #5b5b5b;
-  background-image: url('/img/home/hero.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-origin: border-box;
-  background-attachment: fixed;
-  box-shadow: 0 0 4px #696868;
-}
-@media handheld, only screen and (max-width: 769px) {
-    section#atf {
-      background-attachment: scroll;
-    }
-}
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-  section#atf {
-    background-attachment: scroll;
-  }
-}
-
 main {
   flex: 1 0 auto;
   display: flex;
@@ -218,6 +200,42 @@ main {
 main .container.section {
   margin-top: 40px;
   margin-bottom: 80px;
+}
+
+section#atf,
+section.fixed-image {
+  background-color: #5b5b5b;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-origin: border-box;
+  background-attachment: fixed;
+  box-shadow: 0 0 4px #696868;
+}
+section#atf {
+  height: 100vh;
+  background-image: url('/img/home/hero.jpg');
+}
+section.fixed-image {
+  height: 420px;
+}
+@media handheld, only screen and (max-width: 769px) {
+  section#atf,
+  section.fixed-image {
+    background-attachment: scroll;
+  }
+  section.fixed-image {
+    height: 300px;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  section#atf,
+  section.fixed-image {
+    background-attachment: scroll;
+  }
+  section.fixed-image {
+    height: 300px;
+  }
 }
 
 footer {
