@@ -196,19 +196,7 @@ section#atf {
   background-size: cover;
   background-origin: border-box;
   background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   box-shadow: 0 0 4px #696868;
-}
-section#atf .atf-content {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background: linear-gradient(0,rgba(0,0,0,0.6), rgba(0,0,0,0));
-  padding: 8px 0;
 }
 
 main {
