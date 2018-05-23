@@ -2,11 +2,19 @@ var Clare = {};
 $(function () {
   UI = {};
 
-  UI.navScroll = function (nav, limit) {
+  UI.setNavScroll = function (nav, limit) {
     nav.toggleClass('scrolled', $(document).scrollTop() > limit);
   }
-
   $(document).scroll(function () {
-    UI.navScroll($("header>nav"), 100)
+    var nav = $("header>nav");
+    UI.setNavScroll(nav, 100);
+  });
+
+  UI.toggleFullScreenNav = function (nav) {
+    nav.toggleClass('visible');
+  }
+  $('.toggle-menu').click(function () {
+    var nav = $("nav#full-screen-nav");
+    UI.toggleFullScreenNav(nav);
   });
 });
