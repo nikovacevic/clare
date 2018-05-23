@@ -192,11 +192,21 @@ section#atf {
   background-color: #5b5b5b;
   background-image: url('/img/home/hero.jpg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
   background-origin: border-box;
   background-attachment: fixed;
   box-shadow: 0 0 4px #696868;
+}
+@media handheld, only screen and (max-width: 769px) {
+    section#atf {
+      background-attachment: scroll;
+    }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  section#atf {
+    background-attachment: scroll;
+  }
 }
 
 main {
