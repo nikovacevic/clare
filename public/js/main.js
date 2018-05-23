@@ -2,13 +2,13 @@ var Clare = {};
 $(function () {
   UI = {};
 
-  // Header nav background
-  UI.setNavScroll = function (nav, limit) {
-    nav.toggleClass('scrolled', $(document).scrollTop() > limit);
-  }
+  // Scroll actions
   $(document).scroll(function () {
     var nav = $("header>nav");
-    UI.setNavScroll(nav, 100);
+    nav.toggleClass('scrolled', $(document).scrollTop() > 100);
+    var btt = $("nav#back-to-top");
+    btt.toggleClass('hidden', $(document).scrollTop() < 200)
+    btt.toggleClass('transparent', $(document).scrollTop() < 200)
   });
 
   // Full-screen nav toggle
@@ -25,8 +25,14 @@ $(function () {
     UI.toggleFullScreenNav(nav);
   });
 
-  // Scroll to anchor
   $(document).ready(function () {
+    // Scroll to top
+    $("button#back-to-top").click(function (e) {
+      e.preventDefault();
+      $("html, body").animate({scrollTop: 0}, 400);
+    });
+
+    // Scroll to anchor
     $("a.smooth-scroll").click(function (e) {
       e.preventDefault();
       if ($("nav#full-screen-nav").hasClass('visible')) {

@@ -84,6 +84,12 @@ li img {
 .hidden {
   display: none !important;
 }
+.transparent {
+  opacity: 0;
+}
+.opaque {
+  opacity: 1;
+}
 .left {
   float: left;
 }
@@ -156,6 +162,9 @@ header>nav>ul>li a:hover:not(.toggle-menu) {
   color: #FFFFFF;
   border-bottom: 4px solid #FFF;
 }
+header>nav>ul>li a.toggle-menu {
+  cursor: pointer;
+}
 
 nav#full-screen-nav {
   position: fixed;
@@ -214,12 +223,17 @@ section.fixed-image {
 }
 section#atf {
   height: 100vh;
-  background-image: url('/img/home/hero.jpg');
+  background-image: url('/img/home/hero_landscape.jpg');
 }
 section.fixed-image {
   height: 420px;
 }
-@media handheld, only screen and (max-width: 769px) {
+@media screen and (orientation:portrait) {
+  section#atf {
+    background-image: url('/img/home/hero_portrait.jpg');
+  }
+}
+@media only screen and (max-width: 769px) {
   section#atf,
   section.fixed-image {
     background-attachment: scroll;
@@ -228,13 +242,28 @@ section.fixed-image {
     height: 300px;
   }
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-  section#atf,
-  section.fixed-image {
-    background-attachment: scroll;
-  }
-  section.fixed-image {
-    height: 300px;
+
+nav#back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 36px;
+  z-index: 998;
+}
+nav#back-to-top button#back-to-top {
+  background: none;
+  border: none;
+  padding: 4px;
+  margin: 0px;
+  color: #F0F0F0;
+  text-shadow: 0px 0px 9px black;
+  opacity: 1;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+@media only screen and (max-width: 769px) {
+  nav#back-to-top {
+    bottom: 18px;
+    right: 24px;
   }
 }
 
