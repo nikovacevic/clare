@@ -184,7 +184,7 @@ nav#full-screen-nav {
   left: 0;
   height: 100%;
   width: 100%;
-  overflow-y: scroll;
+  overflow: auto;
   transform: translateY(-100%);
   transition: transform 0.4s;
   background: #FCFCFC;
@@ -255,6 +255,9 @@ section.fixed-image {
   section#atf,
   section.fixed-image {
     background-attachment: scroll;
+  }
+  section#atf {
+    height: 640px;
   }
   section.fixed-image {
     height: 300px;

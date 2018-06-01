@@ -15,8 +15,10 @@ $(function () {
   UI.toggleFullScreenNav = function (nav) {
     nav.toggleClass('visible');
     if (nav.hasClass('visible')) {
+      nav.focus();
       $("html, body").addClass('no-scroll');
     } else {
+      $("body").focus();
       $("html, body").removeClass('no-scroll');
     }
   }
