@@ -24,21 +24,4 @@ $(function () {
     var nav = $("nav#full-screen-nav");
     UI.toggleFullScreenNav(nav);
   });
-
-  $(document).ready(function () {
-    // Scroll to top
-    $("button#back-to-top").click(function (e) {
-      e.preventDefault();
-      $("html, body").animate({scrollTop: 0}, 400);
-    });
-
-    // Scroll to anchor
-    $("a.smooth-scroll").click(function (e) {
-      e.preventDefault();
-      if ($("nav#full-screen-nav").hasClass('visible')) {
-        UI.toggleFullScreenNav($("nav#full-screen-nav"));
-      }
-      $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top - 58}, 400);
-    });
-  });
 });
