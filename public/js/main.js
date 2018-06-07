@@ -1,6 +1,19 @@
 var Clare = {};
 $(function () {
   UI = {};
+  UI.viewportHeight = $(window).height();
+  UI.viewportWidth = $(window).width();
+
+  UI.init = function () {
+    // ATF image
+    $("section#atf").css('height', UI.viewportHeight-$('header').height());
+    $("section#atf").css('margin-top', $('header').height());
+    // Fixed images
+    $("section.fixed-image").css('height', UI.viewportHeight*0.75);
+    setTimeout(function () {
+      $("body").removeClass('loading');
+    }, 250)
+  }
 
   // Scroll actions
   $(document).scroll(function () {
@@ -26,4 +39,6 @@ $(function () {
     var nav = $("nav#full-screen-nav");
     UI.toggleFullScreenNav(nav);
   });
+
+  UI.init();
 });

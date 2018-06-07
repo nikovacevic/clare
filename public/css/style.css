@@ -18,6 +18,10 @@ body {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.04em;
+  transition: all 0.5s;
+}
+body.loading {
+  opacity: 0;
 }
 
 p {}
@@ -231,16 +235,15 @@ main .container.section {
 section#atf,
 section.fixed-image {
   background-color: #5b5b5b;
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center center;
   background-size: cover;
   background-origin: border-box;
-  background-attachment: scroll;
   box-shadow: 0 0 4px #696868;
+  height: 100vh;
 }
 section#atf {
-  margin-top: 40px;
-  height: calc(100vh - 40px);
   background-image: url('/img/home/hero_landscape.jpg');
 }
 section.fixed-image {
@@ -249,18 +252,6 @@ section.fixed-image {
 @media screen and (orientation:portrait) {
   section#atf {
     background-image: url('/img/home/hero_portrait.jpg');
-  }
-}
-@media only screen and (max-width: 769px) {
-  section#atf,
-  section.fixed-image {
-    background-attachment: scroll;
-  }
-  section#atf {
-    height: 640px;
-  }
-  section.fixed-image {
-    height: 300px;
   }
 }
 
@@ -280,12 +271,7 @@ section.fixed-image {
   margin: 20px;
 }
 .partner-logo-container .partner-logo img {
-  max-width: 150px;
-}
-@media only screen and (max-width: 800px) {
-  .partner-logo-container .partner-logo img {
-    max-width: 120px;
-  }
+  max-width: 120px;
 }
 
 .social-media-nav {
