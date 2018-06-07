@@ -254,6 +254,12 @@ section.fixed-image {
     background-image: url('/img/home/hero_portrait.jpg');
   }
 }
+@media only screen and (max-width: 769px) {
+  section#atf,
+  section.fixed-image {
+    background-attachment: scroll;
+  }
+}
 
 .container.section.partner-logo-container {
   margin: 20px 0;
@@ -364,7 +370,7 @@ footer p.copyright {
   opacity:1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .flex-gallery-container .flex-gallery-item {
     flex: 1 0 33.33%;
     margin: 0;
